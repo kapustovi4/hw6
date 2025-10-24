@@ -7,6 +7,9 @@ public class Main {
         };
         Car[] toyotaCars = getCarByBrend(cars, "Toyota");
         System.out.println("Найдено машин Toyota: " + toyotaCars.length);
+
+        Car[] oldToyotaCars = getCarByBrendAndYearOperational(cars, "Toyota", 5);
+        System.out.println("Найдено машин Toyota старше 5 лет: " + oldToyotaCars.length);
     }    
 
     public static Car[] getCarByBrend(Car[] cars, String brend) {
@@ -21,6 +24,27 @@ public class Main {
 
         for (Car car : cars) {
             if (car.getBrand().equalsIgnoreCase(brend)) {
+                result[index] = car;
+                index++;
+            }
+        }
+        return result;
+    }
+
+    public static Car[] getCarByBrendAndYearOperational(Car[] cars, String brend, int years) {
+        int currentYear = java.time.Year.now().getValue();
+        int count = 0;
+
+        for (Car car : cars) {
+            if (car.getBrand().equalsIgnoreCase(brend) && (currentYear - car.getYear()) > years) {
+                count++;
+            }
+        }
+        Car[] result = new Car[count];
+        int index = 0;
+        
+        for (Car car : cars) {
+            if (car.getBrand().equalsIgnoreCase(brend) && (currentYear - car.getYear()) > years) {
                 result[index] = car;
                 index++;
             }
