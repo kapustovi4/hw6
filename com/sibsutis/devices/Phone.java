@@ -15,6 +15,19 @@ public class Phone extends Device {
     public String getDeviceType() {
         return "Phone";
     }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Phone)) return false;
+        Device device = (Device) o;
+        return getId() == device.getId() && 
+               getPrice() == device.getPrice() && 
+               Objects.equals(getIp(), device.getIp());
+    }
+
+    public int hashCode() {
+        return Objects.hash(getId(), getPrice(), getIp());
+    }
 }
 
 
