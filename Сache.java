@@ -26,4 +26,11 @@ class Cache<T> {
         }
         return elements.getFirst();
     }
+    public T getLast() {
+        if (elements.isEmpty()) {
+            return null;
+        }
+        return elements.getLast();
+    }
+
 }       
