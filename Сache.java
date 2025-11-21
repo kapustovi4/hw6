@@ -20,4 +20,10 @@ class Cache<T> {
     public boolean exists(T item) {
         return elements.contains(item);
     }
+    public T getFirst() {
+        if (elements.isEmpty()) {
+            return null;
+        }
+        return elements.getFirst();
+    }
 }       
