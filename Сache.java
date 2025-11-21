@@ -1,0 +1,12 @@
+import java.util.LinkedList;
+
+class Cache<T> {
+    private final int maxSize;
+    private final LinkedList<T> elements;
+    
+    public Cache(int n) {
+        this.maxSize = n;
+        this.elements = new LinkedList<>();  
+    }
+    
+}       
