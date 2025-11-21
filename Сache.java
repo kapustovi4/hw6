@@ -14,4 +14,7 @@ class Cache<T> {
             elements.removeFirst();
         }
     }
+    public boolean remove(T item) {
+        return elements.remove(item);
+    }
 }       
