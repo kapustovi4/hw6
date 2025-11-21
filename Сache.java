@@ -8,5 +8,10 @@ class Cache<T> {
         this.maxSize = n;
         this.elements = new LinkedList<>();  
     }
-    
+    public void add(T item) {
+        elements.add(item);
+        if (elements.size() > maxSize) {
+            elements.removeFirst();
+        }
+    }
 }       
