@@ -12,16 +12,16 @@ public class Main {
         printCache(stringCache);
         System.out.println("");
 
+        System.out.println("Существует 'Второй': " + stringCache.exists("Второй"));
+        System.out.println("Существует 'Первый': " + stringCache.exists("Первый"));
+        System.out.println("");
+
         System.out.println("Первый элемент: " + stringCache.getFirst());
         System.out.println("Последний элемент: " + stringCache.getLast());
         System.out.println("");
 
         System.out.println("Индекс " + 2 + ": " + stringCache.getItemByIndex(2));
         System.out.println("Индекс " + 3 + ": " + stringCache.getItemByIndex(3));
-        System.out.println("");
-
-        System.out.println("Существует 'Второй': " + stringCache.exists("Второй"));
-        System.out.println("Существует 'Первый': " + stringCache.exists("Первый"));
         System.out.println("");
 
         System.out.println("Удаляем 'Второй': " + stringCache.remove("Второй"));
